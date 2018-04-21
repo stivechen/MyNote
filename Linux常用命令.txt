@@ -1,0 +1,23 @@
+#查看tomcat所在的进程
+ps -ef|grep tomcat
+
+#杀死tomcat进程
+kill -9 pid
+
+
+#查看启动控制台日志
+tail -f catalina.out
+
+ps axuwf|grep java
+
+#查看8080端口是否被使用
+netstat -Inpt
+
+#退出查看
+Ctrl+C
+
+
+#tomcat查看项目所在文件夹
+目录：tomcat/conf/server.xml
+文件：<Host name="localhost" debug="0" appBase="webapps" ...>
+
