@@ -1,0 +1,56 @@
+一、linux安装
+	记得选择自定义硬件，然后去掉没必要的硬件。
+	安装过程中，更改主机名称。
+
+二、linux网络设置
+	vi /etc/sysconfig/network-scripts/ifcfg-eth0
+	添加如下：
+	BOOTPROTO=static	(网络形式)
+	IPADDR=192.168.XXX.X	(虚拟机的ip地址，不能与win主机冲突)
+	NETMASK=255.255.255.0	(mask地址，一般都是默认的)
+	GATWAY=192.168.XXX.X	(网关地址)
+
+	重新启动网卡
+	service network restart
+
+三、linux克隆
+	安装rpm格式的jdk文件：
+	rpm -ivh jdk文件名
+	查看安装位置：
+	rpm -ql jdk
+
+	修改环境变量：在用户环境变量
+	vi ~/.bash_profile
+	最后一行加上：
+	export JAVA_HOME=jdk目录
+	expor PATH=$PATH:$JAVA_HOME/bin
+	保存后，立即生效：
+	source ~/.bash_profile
+	查看是否正确安装:
+	printenv
+	查看PATH以及JAVA_HOME
+	关机：
+	init 0
+
+	在VMware中右键克隆
+	修改mac地址：系统自动生成
+	vi /etc/sysconfig/network-scripts/ifcfg-eth0
+	按dd删除HWADDR、UUID
+	删除文件，重启后会自动生成
+	rm -rf /etc/udev/rules.d/70-persistent-net.rules
+	修改主机名称：
+	vi /etc/sysconfig/network
+	HOSTNAME=主机名
+	修改IP地址：
+	vi /etc/sysconfig/network-scripts/ifcfg-eth0
+	修改IPADDR最后一位为别的
+	重启：init 6
+	
+四、linux命令：shell
+	
+
+
+
+
+
+

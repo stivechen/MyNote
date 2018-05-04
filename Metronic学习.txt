@@ -1,0 +1,9 @@
+Metronic学习：
+首先查看文档：_documentation
+
+一：Theme&Layout
+ 具有6种色彩主题（和七个模板不是一回事）：default、darkblue、blue、grey、light、light2。如果要用其中的一种色彩主题，你需要包含themes/[theme_name].css 在页面的 head 部分。如果你喜欢蓝色主题，那就包含layouts/layout/css/themes/darkblue.css css 文件。我们来看下真实的效果。第二套模板默认的主题是blue，也就是我们现在准备用的模板。
+ 
+Theme Style
+Metronic 默认采用直角样式，若要改为圆角，只需要改变 “components.css” 为 “components-rounded.css”即可。
+
